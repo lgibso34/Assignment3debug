@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>My Cars</title>
+    <meta name="description" content="My Cars" />
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/master.css" />
+    <link rel="stylesheet" type="text/css" href="../css/myItems.css" />
+
+    
+
+</head>
+
+<body>
+    <header class="banner">
+        <% include partials/header.ejs %>
+    </header>
+    
+    <% include partials/user-navigation.ejs %>
+	
+    <main>
+        <% include partials/site-navigation.ejs %>
+
+        <div id="bread">
+                <ul>
+                    <li><a href="/index">Home</a></li>
+                    <li>></li>
+                    <li><a href="/myItems">My Cars</a></li>
+                </ul>
+        </div>
+
+        <%# var username = signed in user%>
+
+        <h1>CharlotteImport's Current Cars</h1>
+
+        
+
+    <div id="cars">        
+            <%# This form doesnt do anything special at the moment %>
+        <form action="/index">
+        <table style="width:50%">
+                <tr class="bottom">
+                  <th>Vehicle</th>
+                  <th>Category</th> 
+                  <th>Date Aquired</th>
+                  <th>Overall Rating</th>
+                  <th>Swapped</th>
+                  <th>Return?</th>
+                </tr>
+                
+
+                <% 
+                    var counter = 1;
+                    userCars.forEach(function(item){
+                %>
+                <tr>
+
+                  <td>
+                    <% var href="/item?itemCode=" + item.itemCode %>
+                    <a href="<%= href %>">
+                        <%= item.itemName %>
+                    </a> 
+                  </td>
+                  <td><%= item.catalogCategory %></td>
+                  <td>July 9, 2018</td>
+                  <td><%= item.rating %></td>
+                  <td>swap or check</td>
+                  <%                  
+                   var options = "option" + counter; 
+                   counter++;
+                   %>
+                  <td><input type="checkbox" name="<%= options %>" value="choice"></td>
+                </tr>
+                   <% }); %>
+                  
+                <tr class="bottom">                    
+                    <td colspan="6" id="submitTable"><input type="submit" id="submit" value="Submit"></td>
+                </tr>
+        </table>
+            </form>
+        
+        
+
+
+    </div>
+		
+    </main>
+	
+	<footer id="Validation">
+        <% include partials/footer.ejs %>
+	</footer>
+    
+</body>
+</html>

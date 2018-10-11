@@ -1,0 +1,26 @@
+#pic{
+    max-width: 500px;
+    width: auto;
+    height: auto;
+}
+
+#info{
+    margin-left: 220px;
+}
+
+.inline{
+    display:inline;
+}
+
+
+.btn-link{
+    border:none;
+    outline:none;
+    background:none;
+    cursor:pointer;
+    color:black;
+    padding:0;
+    text-decoration:none;
+    font-family:inherit;
+    font-size:inherit;
+  }

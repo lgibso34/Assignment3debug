@@ -1,0 +1,7 @@
+1. IN APP.JS 
+USERMAP IS BEING USED TO DISPLAY ITEMS ON MYSWAPS AND MYITEMS from Itemdb.
+remove the item assignment and change TO THE MAP OF THE USERITEMS IN USERPROFILE.JS
+
+2. userSwap.js has not been tested, test after setting up ProfileController.js
+
+3. ProfileController works fine.
